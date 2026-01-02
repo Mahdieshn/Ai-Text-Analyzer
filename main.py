@@ -1,9 +1,16 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import spacy
+from fastapi.middleware.cors import CORSMiddleware 
 
 # 1. Initialize FastAPI app and Load the NLP model (CPU-friendly)
 app = FastAPI(title="AI Text Insights API", version="1.0.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # در محیط واقعی باید محدود شود
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 nlp = spacy.load("en_core_web_sm")
 
 # 2. Define Request Schema
