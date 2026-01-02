@@ -2,10 +2,18 @@ version: '3.8'
 
 services:
   backend:
-    build: .
+    build: ./backend
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
     environment:
-      - PYTHONUNBUFFERED=1
+      - CHOKIDAR_USEPOLLING=true # برای آپدیت آنی کد در ویندوز
+    command: npm run dev -- --host
