@@ -57,7 +57,6 @@ You only need **Docker Desktop**.
 
 ```bash
 git clone https://github.com/Mahdieshn/Ai-Text-Analyzer.git
-cd ai-text-analyzer
 ```
 
 ### 2. Launch the entire stack
