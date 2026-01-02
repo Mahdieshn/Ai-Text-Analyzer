@@ -80,10 +80,12 @@ docker-compose up --build
 │   ├── Dockerfile       # Python environment
 │   └── requirements.txt # Project dependencies
 ├── frontend/
-│   ├── src/             # React components
+│   ├── src/
+│   │   └── App.jsx      # Frontend Logic
 │   ├── Dockerfile       # Node.js environment
-│   └── App.jsx          # Frontend Logic
+│   └── package.json
 └── docker-compose.yml   # Orchestration for both services
+
 ```
 
 ---
